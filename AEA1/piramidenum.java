@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class piramidenum{
     public static void main(String[] args) {
         String total = "";

@@ -6,7 +6,6 @@ public class joc{
         Scanner guess = new Scanner(System.in);
         Random randomNum = new Random();
         int random = randomNum.nextInt(11);
-        //int randomNum = (int)(Math.random() * 11); // 0 to 10 
         int numguess = 0;
         String Frase = "Mes sort la proxima vegada, ";
         for (int i = 3; i>0; i--){
