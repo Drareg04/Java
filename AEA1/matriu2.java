@@ -1,4 +1,4 @@
-public class  matriu{
+public class  matriu2{
     public static void main(String[] args) {
         System.out.println("---------------------");
         System.out.println("MATRIU");
@@ -10,8 +10,12 @@ public class  matriu{
             for(int j = 0; j < matriuParells[i].length; j++) {
                 if(i%2==0 && j%2==0)
                     matriuParells[i][j] = 1;
+                else if (i%2==0 && j%2!=0)
+                    matriuParells[i][j] = 2;
+                else if (i%2!=0 && j%2==0)
+                    matriuParells[i][j] = 3;
                 else
-                    matriuParells[i][j] = i;
+                    matriuParells[i][j] = 4;
                 System.out.println("La posició " + i + " " + j + " de la matriu matriuParells val: " + matriuParells[i][j]);
             }
             System.out.println("La fila " + i + " de la matriu matriuParells ja està tota plena");
