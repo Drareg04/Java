@@ -1,27 +1,21 @@
+import java.util.Scanner;
+
 public class fun{
     public static void main(String[] args){
-        asterix(7);
-        obelix(1);
-        num(6, '5');
-        asterix(3);
-        obelix(5);
-        num(2, '3');
-    }
-    public static void asterix(int rep){
-        for(int i = 0; i < rep; i++){
-            System.out.print('*');
+        Scanner num = new Scanner(System.in);
+        char chr;
+        int rep;
+        for(int i = 0; i < 6; i++){
+            System.out.print("Que vol imprimir: ");
+            chr = num.next().charAt(0);
+            System.out.print("Quantes vegades: ");
+            rep = num.nextInt();
+            joker(rep, chr);
         }
-        System.out.println();
     }
-    public static void obelix(int rep){
+    public static void joker(int rep, char chr){
         for(int i = 0; i < rep; i++){
-            System.out.print('-');
-        }
-        System.out.println();
-    }
-    public static void num(int rep, int num){
-        for(int i = 0; i < rep; i++){
-            System.out.print(num);
+            System.out.print(chr);
         }
         System.out.println();
     }
