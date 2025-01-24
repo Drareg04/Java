@@ -72,14 +72,14 @@ public class  tictactoe {
                 }
                 tictactoe.displayall();
                 do{
-                    choice = num.nextInt();
+                    choice = tictactoe.LLegirEnterTeclat(num);
                     check = tictactoe.checkchoice(choice);
                 }while(check == 0);
                 tictactoe.displayall();
             }
             tictactoe.displaytiny(choice);
             do{
-                choice2 = num.nextInt();
+                choice2 = tictactoe.LLegirEnterTeclat(num);
                 check = tictactoe.placesign(choice, choice2);
             }while(check == 0);
             int win = tictactoe.checkwin(choice);
@@ -213,8 +213,12 @@ public class  tictactoe {
             k = 0;
         else if (choice2 <= 6)
             k = 1;
-        else
+        else if (choice2 <= 9)
             k = 2;
+        else{
+            i = 0;
+            return (0);
+        }
         l = choice2 - (k*3) - 1;
         if(matrix[i][j][k][l] == ' '){
             if(player == 0)
@@ -292,8 +296,12 @@ public class  tictactoe {
             i = 0;
         else if (choice <= 6)
             i = 1;
-        else
+        else if (choice <= 9)
             i = 2;
+        else{
+            i = 0;
+            return (0);
+        }
         j = choice - (i*3) - 1;
         if (game[i][j] != ' ' && game[i][j] != '1')
             return (0);
@@ -330,5 +338,19 @@ public class  tictactoe {
             notfinished = false;
         if (game[0][2] == sign && game[1][1] == sign && game[2][0] == sign)
             notfinished = false;
+    }
+    public static int LLegirEnterTeclat(Scanner scan){
+        boolean correcte=false;
+        int Llegit;
+        Llegit = 0;
+        scan.next();
+        do{
+            correcte = scan.hasNextInt();
+            if (correcte) {
+                Llegit = scan.nextInt();
+            } 
+        }
+        while (!correcte);
+        return (Llegit);
     }
 }
